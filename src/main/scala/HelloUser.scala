@@ -1,11 +1,13 @@
 object HelloUser {
-  def greetMessage(): Unit = {
-    var flag = true
-    while (flag) {
+  // greets user based on input
+  private def greetMessage(): Unit = {
+    try {
+      var flag = true
+      while (flag) {
       println("Please Enter your Name: ")
-      var userName = scala.io.StdIn.readLine()
-      if (userName.length >= 3) {
-        println("Hello " + userName + ", How are you?")
+      val UserName = scala.io.StdIn.readLine()
+      if (UserName.length >= 3) {
+        println("Hello " + UserName + ", How are you?")
         flag = false
       }
       else {
@@ -13,6 +15,12 @@ object HelloUser {
       }
     }
   }
+    catch {
+      case exception: Exception =>
+        println(exception.printStackTrace())
+    }
+  }
+  // main methods
   def main(args: Array[String]): Unit = {
     greetMessage()
   }
