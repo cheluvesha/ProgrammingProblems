@@ -4,16 +4,16 @@ object TripletSumToZero {
   //method calculates triplets sum equals to zero
   private def findTriplets(array: Array[Int], Size: Int) {
     var found: Boolean = false
-    for(elementI <- 0 until Size) {
+    for(firstElement <- 0 until Size) {
       var setElement: Set[Int] = Set()
-      for( elementJ <- elementI + 1 until Size) {
-        val x = -(array(elementI) + array(elementJ))
-        if (setElement.contains(x)) {
-          println("The Values are: "+x+", "+array(elementI)+", "+array(elementJ))
+      for( secondElement <- firstElement + 1 until Size) {
+        val sumElement = -(array(firstElement) + array(secondElement))
+        if (setElement.contains(sumElement)) {
+          println("The Values are: "+sumElement+", "+array(firstElement)+", "+array(secondElement))
           found = true
         }
         else {
-          setElement += array(elementJ)
+          setElement += array(secondElement)
         }
       }
     }
