@@ -118,7 +118,6 @@ object TicTacToe {
     winningCondition(switchTurn)
   }
 
-
   // method computer playing to win
   def computerPlayingToWin(): Unit = {
     for (counter <- 1 to Cell) {
