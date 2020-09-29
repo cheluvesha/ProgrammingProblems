@@ -8,9 +8,9 @@ object StopWatch {
     try {
       var start: Long = 0
       var end: Long = 0
-      var press: String = readLine("Enter S key to start stopwatch:")
+      var press: String = readLine("Enter Any key to start stopwatch:")
       start = System.nanoTime()
-      press = readLine("Enter R key to stop stopwatch:")
+      press = readLine("Enter Any key to stop stopwatch:")
       end = System.nanoTime()
       println("%d Secs".format(TimeUnit.SECONDS.convert(end - start, TimeUnit.NANOSECONDS)))
     }
