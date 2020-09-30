@@ -9,16 +9,17 @@ object GamblingSim {
       val Goal = readLine("Enter the Goal: ").toInt
       val Turns = readLine("Enter the number of Turns gambler will play: ").toInt
       val BaseValue = 100
+      val Change = 1
       while (stake != Goal && stake != 0 && counter < Turns) {
         if (Math.random() > 0.5) {
-          win += 1
-          stake += 1
+          win += Change
+          stake += Change
         }
         else {
-          loss += 1
-          stake -= 1
+          loss += Change
+          stake -= Change
         }
-        counter += 1
+        counter += Change
       }
       println("No of Turns Gambler Won :" + win + "\n" + "Win Percentage :" + (win.toFloat * BaseValue/ Turns.toFloat)
         + "\n" + "Loss Percentage :" + (loss.toFloat * BaseValue / Turns.toFloat))
