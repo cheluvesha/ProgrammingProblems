@@ -5,8 +5,10 @@ object Coupons {
   def generateCoupons( total: Int): Unit ={
     var DistinctCouponNumbers: Set[Int] = Set()
     var totalCoupons = total
+    val Min = 500
+    val Max = 10000
     while(totalCoupons != 0) {
-      DistinctCouponNumbers += (1 + Random.nextInt(500) * Random.nextInt(100000))
+      DistinctCouponNumbers += (1 + Random.nextInt(Min) * Random.nextInt(Max))
       totalCoupons -= 1
     }
     DistinctCouponNumbers.foreach(coupon => println("Here is Your Coupon : "+coupon))
